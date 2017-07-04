@@ -42,18 +42,11 @@
     <section class="slides">
         <section>
             <h1>Kotlin</h1>
-            <h3>Saviour of the Java platform</h3>
+            <h3>From zero to eleven</h3>
             <small><a href="http://jussi.hallila.com">Jussi Hallila</a> / <a
                     href="http://twitter.com/Xantier">@Xantier</a>
             </small>
-            <aside class="notes">
-                Programming for 8 years, 6 in Dublin. From PHP to Java to... Javascript, Falling in Love with Spring.
-                Hating Java. Loving the ecosystem. Loving the tooling. Tried Spring, Play, Ratpack, Vaadin, Android.
-                Always seem to be coming back to Spring.
-                Love Jetbrains. My wife bought me my first IntelliJ license and renews it yearly on my birthday. That
-                subscription is the glue that keeps our marriage together.
-                On Kotlin for a year. Journey started with frustration to old codebase, fuck java7.
-            </aside>
+
         </section>
 
         <section>
@@ -79,10 +72,7 @@ fun main(args: Array&lt;String>){
 
 // Not a chance
 </code></pre>
-                <aside class="notes">
-                    all these things make the lang pretty and terse. data classes, val, inlined constructors,
-                    first class functions and function types, destructuring, pretty lambdas and...
-                </aside>
+
             </section>
             <section>
                 <h2>Superior Type Inference</h2>
@@ -98,13 +88,7 @@ fun explicit(): String {
     return "Making the return type explicit"
 }
 </code></pre>
-                <aside class="notes">
-                    some basic syntax. Val is defining a value, var is defining a variable. Vals are "immutable", in
-                    reality readonly values, var can be reassigned.
-                    Types are after because then we can infer. functions can omit "void" words, in this lang Unit,
-                    functions can be expressions and then the type can be inferred from the full thing
-                    also if the type needs to be displayed, then it is similarly placed after the function with a colon
-                </aside>
+
             </section>
             <section>
                 <h2>Full Java Interoperability</h2>
@@ -141,10 +125,6 @@ java.lang.nullPointerException
 	...
 	...s
 					</code></pre>
-                <aside class="notes">
-                    Change braces to be shitty
-                    Casting, is, as, not null, elvis, question mark, EXCLAMATION!!
-                </aside>
             </section>
             <section>
                 <h2>Null Safety</h2>
@@ -167,18 +147,7 @@ fun main(args: Array&lt;String>){
                         class="fragment highlight-green">?.</span>get(0)) // This is grand
 <span class="fragment">// null</span>
                 </code></pre>
-                <aside class="notes">
-                    we have a class topshelf that contains our drinks. Come monday and first day of work this week,
-                    naturally there is a bit of a, hmm this is a Finnish idiom, your mouth is snapping, (snap snap)
-                    meaning the
-                    sound you mouth makes when it's dry. It's not only the irish who are prone to take a pint or two...
-                    anyways, come monday and when we try to reach a bottle of midleton from the topshelf, it is empty.
-                    Weekend is gone
-                    and restocking trip is not done yet, so our drink list is null.
-                    Kotlin knows this and prevents us from reaching to that shelf. Java devs can try it and maybe injure
-                    their arm or something when reaching for the empty shelf
 
-                </aside>
             </section>
             <section>
                 <h2>Tooling</h2>
@@ -189,22 +158,13 @@ fun main(args: Array&lt;String>){
                     <li>Plugins to Eclipse (official), Sublime, Atom, Vim</li>
                     <li>Magical intellisense out of the box</li>
                 </ul>
-                <aside class="notes">
-                    haven't touched Android studio. My wife takes care that I don't have to because she keeps feeding me
-                    IntelliJ
-                    The community has decided to save their fingers and not build an emacs plugin
-                    IntelliJ driven development. Idris is fun. ctrl+space, ctrl+space, ctrl+space
-                </aside>
+
             </section>
         </section>
         <section>
             <section>
                 <h1>High level laws of Kotlin</h1>
-                <aside class="notes">
-                    Let's jump through these laws quickly and then continue onto some code examples.
-                    I wasn't brave enough to do live coding, so all the code is on the slides. Hopefully it is
-                    comprehensible
-                </aside>
+
             </section>
             <section>
                 <h2>Finality</h2>
@@ -213,11 +173,7 @@ fun main(args: Array&lt;String>){
                     <li>vals final by default</li>
                     <li>open keyword to make classes extendable</li>
                 </ul>
-                <aside class="notes">
-                    see bytecode from beaut
-                    Something like spring for open. Makes classes essentially immutable since not extendable and props
-                    are final
-                </aside>
+
             </section>
             <section>
                 <h2>Organization</h2>
@@ -228,10 +184,7 @@ fun main(args: Array&lt;String>){
                     <li>Decompiled to a class by filename and static vars/funcs</li>
                 </ul>
                 </p>
-                <aside class="notes">
-                    Create file, create functions, create vars.
-                    Decompile, see java code
-                </aside>
+
             </section>
             <section>
                 <h2>Visibility</h2>
@@ -239,12 +192,7 @@ fun main(args: Array&lt;String>){
                     <li>Everything is public by default</li>
                     <li>Modifiers: private, internal, protected</li>
                 </ul>
-                <aside class="notes">
-                    public, because immutable
-                    and public visibility modifier
-                    internal, module scoped
-                    no package protected visibility, everything should be in modules instead
-                </aside>
+
             </section>
         </section>
         <section>
@@ -267,15 +215,7 @@ fun main(args: Array&lt;String>){
         val truly = "Static, truly static"
     }
 } <span class="fragment">// Companied.truly</span></span></code></pre>
-                <aside class="notes">
-                    No need for parens or braces
-                    constructor is built in, val = read only, var read-write
-                    objects are singletons by default and be called as such.
-                    companion objects are holders for static stuff within a class. replacements for private static final
-                    daa-daa-daa
-                    also const keyword is there for values if you want to have a truly constant value (aka, those snake
-                    cased uppercase sentences)
-                </aside>
+
             </section>
             <section>
                 <h2>Classes, Interfaces and Objects</h2>
@@ -296,10 +236,7 @@ fun main(args: Array&lt;String>){
     lateinit var gString: String</span>
 }</span>
 </code></pre>
-                <aside class="notes">Few keywords we can introduce here.
-                    init, lateinit.
-                    without lateinit types would be nullable. Kotlin is at war against null
-                </aside>
+
 
             </section>
             <section>
@@ -397,10 +334,7 @@ data class PiedPiper(val weissmanScore: String): NextBigThing()</span>
   <span class="fragment highlight-red"><span class="fragment fade-out">else -> println("nope")</span></span>
 }</span>
 </code></pre>
-                <aside class="notes">
-                    is --> instanceof
-                    but surprise! no need for else
-                </aside>
+
             </section>
             <section>
                 <h2>when, if, try = expressions</h2>
@@ -440,19 +374,7 @@ data class PiedPiper(val weissmanScore: String): NextBigThing()</span>
         print("Same Types")
     }
 }</span>            </code></pre>
-                <aside class="notes">
-                    Don't worry, I'll run out of Silicon Valley references soon enough
 
-                    Top level functions lead to extinction of static util method up to a point, there is also another
-                    reason in the lang that enhances that effect
-                    If there is a need to namespace or scope these things, you can use objects. But it's not really
-                    needed.
-                    Far abstracted functions might be a good idea to keep in these spot, though there are better places
-                    to dump those in if type safety
-
-                    you'll rarely define functions to vals, because, well why would you? makes a good demo for func
-                    types
-                </aside>
                 </p>
             </section>
             <section>
@@ -476,12 +398,7 @@ val <span class="fragment highlight-blue">`fun`</span> = PiperChat("Dinesh")</sp
 <span class="fragment">val scoreOrEyeCount: Int = `fun` <span class="fragment highlight-blue">+</span> games <span
         class="fragment highlight-blue">until</span> --eye</span>
             </code></pre>
-                <aside class="notes">
-                    I was lying, there is endless fun in Silicon Valley
-                    fun backticked, because keyword
-                    operator keyword, is bound to a class and needs to take one argument, in this case the internet
-                    infix keyword, same rules.
-                </aside>
+
                 </p>
             </section>
             <section>
@@ -494,10 +411,7 @@ val <span class="fragment highlight-blue">`fun`</span> = PiperChat("Dinesh")</sp
                     <li>Can't be used to override existing funs</li>
                 </ul>
                 </p>
-                <aside class="notes">
-                    misleading statically, they need to be invoked to an instance of a class, not class itself
-                    if you want a proper static function, you can use companion objects
-                </aside>
+
             </section>
         </section>
         <section>
@@ -521,15 +435,6 @@ macbook({ println("trash") })
     it == 2016
 }</span>            </code></pre>
                 </p>
-                <aside class="notes">
-                    or in this case lamd-ba
-                    Can access closure and modify closure vars
-                    What make lambdas very good are these braces and how they are handled. Kotlin guys have thought this
-                    out excellently
-                    Just like your teeth, proper placement of these braces will make for a beautiful outline
-
-                    first use case for these is probably in -->
-                </aside>
 
             </section>
         </section>
@@ -565,12 +470,6 @@ macbook({ println("trash") })
                 </ul>
                 </p>
             </section>
-            <aside class="notes">
-
-                From these we get a good bridge back to extension function, all collection extensions are, as the name
-                says,
-                done as extension functions to those wrapped collection classes
-            </aside>
 
         </section>
         <section>
@@ -587,9 +486,7 @@ macbook({ println("trash") })
                     <li>Can be used as a function argument</li>
                 </ul>
                 </p>
-                <aside class="notes">
-                    extension props only with getter/setter, no backing fields
-                </aside>
+
             </section>
             <section>
                 <h2>Extension examples</h2>
@@ -607,12 +504,6 @@ println(str.uberized())</span> <span class="fragment">// No way, mo</span>
 fun String.`is`(situation: String) = this + "is $fine"</span><span class="fragment">
 println("uber".`is`("".fine))</span><span class="fragment"> // uber is a dumpster fire</span></code></pre>
                 </p>
-                <aside class="notes">
-                    Decompile first and second
-                    For humour purposes we omit the usage situation
-
-                    there is also inlining that can be done for few purposes
-                </aside>
             </section>
             <section>
                 <h2>Lambdas with receivers</h2>
@@ -629,14 +520,6 @@ fun &lt;T, R> T.run(f: T.() -> R): R = f()
 <span class="fragment">// javaBean.also { it.beanField2 = "Second Field" }  </span>
 </code></pre>
                 </p>
-                <aside class="notes">
-                    let: can be used to scope. eg. getDBconn, let do stuff, and return done stuff, conn is gone after
-                    that
-                    apply: this is the object that it's called on, receiver
-                    with: similar to apply, but returns the result from within lambda
-                    run: simple way to scope your vars and return from it using enclosing as this
-                    also: similar to apply, but the enclosing class is this and it is the receiver
-                </aside>
             </section>
             <section data-transition="zoom-in">
                 <h2>Typesafe DSLs</h2>
@@ -658,14 +541,6 @@ abstract class BaseTopping(<span class="fragment highlight-blue">override</span>
 }
             </code></pre>
                 </p>
-                <aside class="notes">
-                    Came from groovy world. But now typesafe. Android users might be familiar with anko
-                    Gradle kotlin script is done like this.
-                    Let's set up a scenario
-                    Note default values for price and toppings
-                    abstract members -> function and val + var
-                    data class can have member function as well, this is written outside just for fun
-                </aside>
             </section>
             <section data-transition="zoom-in">
                 <h2>Typesafe DSLs</h2>
@@ -681,9 +556,6 @@ class Anchovy: Topping("Anchovy"){
     override val unitPrice = 6
 }</span>            </code></pre>
                 </p>
-                <aside class="notes">
-                    with get and setter, or without, doesn't matter
-                </aside>
             </section>
             <section data-transition="zoom-in fade-out">
                 <h2>Typesafe DSLs</h2>
@@ -698,9 +570,6 @@ fun order(name: String, <span class="fragment highlight-blue">hoef: Pizza.() -> 
     Pizza(name).hoef()
 </span></code></pre>
                 </p>
-                <aside class="notes">
-                    with get and setter, or without, doesn't matter
-                </aside>
             </section>
             <section data-transition="zoom-in fade-out">
                 <h2>Typesafe DSLs</h2>
@@ -718,9 +587,6 @@ fun order(name: String, <span class="fragment highlight-blue">hoef: Pizza.() -> 
 // Pizza(name=Kotlinante, toppings=[Cheese@279f2327,
 // Anchovy@2ff4acd0, Ananas@54bedef2], price=0)</span></code></pre>
                 </p>
-                <aside class="notes">
-                    Any italians in the audience, is the name italian sounding enough?
-                </aside>
             </section>
         </section>
         <section>
@@ -759,17 +625,6 @@ fun order(name: String, <span class="fragment highlight-blue">hoef: Pizza.() -> 
     }
 }
 </span></code> </pre>
-                <aside class="notes">
-                    lazy from Delegates class, read only. saves return into backing field, returns directly from there
-                    in the future
-                    underscore is _: KProperty<*>
-                    observable, needs an argument to itm the argument is the initial value, aka identity, write only
-                    vetoable, needs an argument to it, write only, returns true and does things based that
-
-                    mention by map, delegate. Can be used to take in map to a constructor and then assign to properties
-                    based on their names
-                    Can be local as well
-                </aside>
             </section>
             <section>
                 <h2>Manual delegation</h2>
@@ -788,12 +643,6 @@ fun order(name: String, <span class="fragment highlight-blue">hoef: Pizza.() -> 
 }</span><span class="fragment">
 // Pizza(name=Kotlinante, toppings=[Cheese@3caeaf62,
 // Anchovy@e6ea0c6, Ananas@6a38e57f], price=13)</span>                </code> </pre>
-                <aside class="notes">
-                    need to ovveride tostring because price is not initialized in constructor
-                    remember, there was no price in the "topping" interface, just unitprice
-                    cheese =3, ananas=4, anchovy=6, no amounts yet though.
-                    Interface, needs to implemented in a class, no lambdas here
-                </aside>
             </section>
             <section>
                 <h2>Manual delegation</h2>
@@ -811,10 +660,6 @@ fun order(name: String, <span class="fragment highlight-blue">hoef: Pizza.() -> 
     override fun toString() =
         "{name=$name, price=$unitPrice, amount=$amount}"
 }</span>                </code> </pre>
-                <aside class="notes">
-                    cheese =3, ananas=4, anchovy=6, no amounts yet though.
-                    Also this is not class delegation
-                </aside>
             </section>
             <section>
                 <h2>Class level delegation</h2>
@@ -829,10 +674,6 @@ class Anchovy : BaseTopping(PriceAndNameProvider("Anchovy", 6))</span>
 <span class="fragment">// { acc, it ->
 //    acc + (it as BaseTopping).price
 // }</span></code> </pre>
-                <aside class="notes">
-                    cheese =3, ananas=4, anchovy=6, no amounts yet though.
-                    Also this is not class delegation
-                </aside>
             </section>
             <section data-transition="zoom-in fade-out">
                 <h2>Typesafe delegated higher order lambdas with receivers DSL</h2>
@@ -852,11 +693,6 @@ class Anchovy : BaseTopping(PriceAndNameProvider("Anchovy", 6))</span>
 //    {name=Ananas, price=4, amount=2}]
 </span></code></pre>
                 </p>
-                <aside class="notes">
-                    How do you really do this?
-                    You try to write a good DSL call and then ram down Ctrl+space and hope IntelliJ fills things out for
-                    you.
-                </aside>
             </section>
         </section>
         <section>
@@ -868,14 +704,6 @@ class Anchovy : BaseTopping(PriceAndNameProvider("Anchovy", 6))</span>
                 <li>Javascript support</li>
             </ul>
             </p>
-            <aside class="notes">
-                released in march. Haven't had time to touch any of those yet.
-                Like said I'm not a full time Kotlin dev, probably not even a good one...
-                though i've been said that I'm the best Kotlin dev in the world...
-                by my wife... who is a goldsmith and knows fuck all about programming, I'd take that with a grain of
-                salt
-                Aanyways
-            </aside>
         </section>
 
         <section>
@@ -897,16 +725,6 @@ class Anchovy : BaseTopping(PriceAndNameProvider("Anchovy", 6))</span>
             <section>
                 <h2>Safety</h2>
                 <p>The Compiler helps us a lot more than in Java.<br/>Safe like a wall!</p>
-                <aside class="notes">
-                    Have you ever been in a situation where a list of commit on a project grows and grows while you add
-                    null checks. Maybe the database gives out some incorrect data, maybe you're just tired and want to
-                    go the fuck home. Anyways, not with Kotlin. It'll be one commit because the compiler will keep
-                    moaning.
-                    Also better type system keeps the code more succinct and with that devs are more willing to make the
-                    sacrifices
-                    to actually create type safe structures with interfaces and classes.
-                    Proper type aliases would have given this an extra boost but can't get everythign
-                </aside>
             </section>
             <section>
                 <h2>Cheap investment</h2>
@@ -921,15 +739,13 @@ class Anchovy : BaseTopping(PriceAndNameProvider("Anchovy", 6))</span>
                 <h2>It is more fun</h2>
                 <p>Once you go Kotlin,</p>
                 <p class="fragment"> your fun will be Dublin </p>
-                <aside class="notes">
-                    I'm so sorry about this. Trying to come up with a good pun on this took maybe 80% of the preparation
-                    time to this presentation. I don't even know how to explain that so it would make sense. If you have
-                    any suggestions, please let me know.
-                </aside>
             </section>
         </section>
         <section>
             <h1>TY</h1>
+            <small><a href="http://jussi.hallila.com/kotlin_for_java_devs/#/">Slides</a> / <a
+                    href="https://github.com/Xantier/kotlin_for_java_devs">Code examples</a>
+            </small>
         </section>
     </section>
 </div>
