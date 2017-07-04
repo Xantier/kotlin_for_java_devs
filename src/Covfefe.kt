@@ -1,0 +1,1 @@
+data class Covfefe(val first: String, val second: String)
